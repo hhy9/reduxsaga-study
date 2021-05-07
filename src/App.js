@@ -3,14 +3,16 @@ import { createStore,applyMiddleware } from 'redux';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import FriendMain from './NOreact-redux/friend/container/FriendMain';
 import TimelineMain from './NOreact-redux/timeline/container/TimelineMain';
-
+import store from './NOreact-redux/common/store'
 export default function App() {
   return (
     // provider로 데이터를 제공해주고 
+    <Provider store={store}>
     <div>
       <FriendMain />
       <TimelineMain />
     </div>
+    </Provider>
   );
 }
 
